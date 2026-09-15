@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  ::selection {
+    @apply bg-terracotta text-cream-50;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em];
+  }
+
+  /* Menu photos framed by lib/menu.ts `crop`: square thumbnail on phones, 4:3 card from `sm`. */
+  .photo-crop {
+    --crop-w: var(--crop-w-base);
+    --crop-h: var(--crop-h-base);
+    --crop-l: var(--crop-l-base);
+    --crop-t: var(--crop-t-base);
+  }
+
+  @media (min-width: 640px) {
+    .photo-crop {
+      --crop-w: var(--crop-w-sm);
+      --crop-h: var(--crop-h-sm);
+      --crop-l: var(--crop-l-sm);
+      --crop-t: var(--crop-t-sm);
+    }
+  }
+}
+
+/* Thai: room for stacked vowels and tone marks; letter-spacing would pull combining marks apart. */
+html:lang(th) :is(h2, h3, h4) {
+  line-height: 1.4;
+}
+
+html:lang(th) .eyebrow {
+  letter-spacing: 0.02em;
+}
