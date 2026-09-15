@@ -130,9 +130,9 @@ export default function AboutGallery({ copy }: { copy: GalleryCopy }) {
                 src={photo.src}
                 alt={copy.alts[photo.id]}
                 fill
-                // Eager: side photos peek out and slide to the front, lazy loading would leave them blank.
-                loading="eager"
                 draggable={false}
+                quality={75}
+                // Card is 82% of its column: one column on phones, half the 1152px container from `md`.
                 sizes="(min-width: 1152px) 440px, (min-width: 768px) 41vw, 82vw"
                 className="object-cover"
                 style={{ objectPosition: photo.position }}

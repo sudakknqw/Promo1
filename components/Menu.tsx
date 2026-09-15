@@ -11,7 +11,7 @@ export default function Menu({ dict }: { dict: Dictionary }) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow={t.eyebrow} title={t.title} intro={t.intro} align="center" />
 
-        <nav aria-label={t.categoriesLabel} className="mt-8 flex justify-center gap-2">
+        <nav aria-label={t.categoriesLabel} className="mt-8 flex flex-wrap justify-center gap-2">
           {menu.map((category) => (
             <a
               key={category.id}

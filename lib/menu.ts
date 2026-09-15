@@ -114,10 +114,10 @@ export const menu: MenuCategory[] = [
   {
     id: "bakery",
     items: [
-      { id: "butter-croissant", price: 85, image: { src: "/images/latte-croissant.jpg", focus: "50% 32%", zoom: 1.7 } },
-      { id: "cardamom-bun", price: 95, image: { src: "/images/latte-cardamom-buns.jpg", focus: "63% 48%", zoom: 1.5 } },
-      { id: "lemon-bundt-cake", price: 90, image: { src: "/images/filter-coffee-bundt.jpg", focus: "53% 45%", zoom: 1.6 } },
-      { id: "sourdough-eggs", price: 185, image: { src: "/images/flat-white-eggs.jpg", focus: "38% 35%", zoom: 1.4 } },
+      { id: "butter-croissant", price: 85, image: { src: "/images/croissant.jpg", focus: "50% 32%", zoom: 1.7 } },
+      { id: "cardamom-bun", price: 95, image: { src: "/images/cardamom-bun.jpg", focus: "63% 48%", zoom: 1.5 } },
+      { id: "lemon-bundt-cake", price: 90, image: { src: "/images/lemon-bundt.jpg", focus: "53% 45%", zoom: 1.6 } },
+      { id: "sourdough-eggs", price: 185, image: { src: "/images/sourdough-eggs.jpg", focus: "38% 35%", zoom: 1.4 } },
     ],
   },
 ];

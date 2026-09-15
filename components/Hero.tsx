@@ -13,6 +13,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         alt={t.imageAlt}
         fill
         priority
+        quality={75}
         sizes="100vw"
         className="-z-20 object-cover object-center"
       />

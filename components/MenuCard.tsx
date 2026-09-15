@@ -62,6 +62,7 @@ function CroppedPhoto({ image, crop, alt }: { image: MenuImage; crop: PhotoCrop;
           alt=""
           aria-hidden="true"
           fill
+          quality={50}
           sizes="(min-width: 640px) 160px, 64px"
           className="scale-125 object-cover opacity-80 blur-xl"
         />
@@ -72,6 +73,7 @@ function CroppedPhoto({ image, crop, alt }: { image: MenuImage; crop: PhotoCrop;
         alt={alt}
         width={crop.width}
         height={crop.height}
+        quality={75}
         sizes={sizes}
         className={`absolute max-w-none transition-transform duration-500 ease-out group-hover:scale-105 ${
           letterboxed ? "[mask-image:linear-gradient(to_right,transparent,#000_12%,#000_88%,transparent)]" : ""
@@ -88,6 +90,12 @@ function CroppedPhoto({ image, crop, alt }: { image: MenuImage; crop: PhotoCrop;
 }
 
 function PositionedPhoto({ image, alt }: { image: MenuImage; alt: string }) {
+  // The zoom enlarges the rendered photo, so ask for a proportionally wider file.
+  const zoom = image.zoom ?? 1;
+  const sizes = `(min-width: 1024px) ${Math.ceil(280 * zoom)}px, (min-width: 640px) ${Math.ceil(
+    45 * zoom,
+  )}vw, ${Math.ceil(96 * zoom)}px`;
+
   return (
     <div
       className="absolute inset-0"
@@ -97,7 +105,8 @@ function PositionedPhoto({ image, alt }: { image: MenuImage; alt: string }) {
         src={image.src}
         alt={alt}
         fill
-        sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 96px"
+        quality={75}
+        sizes={sizes}
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         style={{ objectPosition: image.focus ?? "center" }}
       />

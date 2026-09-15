@@ -31,7 +31,7 @@ const en: Dictionary = {
     categories: {
       coffee: { title: "Coffee", note: "Beans roasted weekly from farms in Chiang Rai and Nan." },
       tea: { title: "Tea", note: "Loose-leaf from the northern highlands, brewed to order." },
-      bakery: { title: "Bakery", note: "Baked in-house every morning. When it’s gone, it’s gone." },
+      bakery: { title: "Kitchen & Bakery", note: "Baked in-house every morning. When it’s gone, it’s gone." },
     },
     items: {
       "iced-americano": {
